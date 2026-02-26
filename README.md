@@ -1,16 +1,26 @@
+Prompt_Conception_Base
+Partie 1. 
+
+Tu travailles dans le domaine du Sport / Jiu-Jitsu Brésilien (JJB). Ton organisation sportive internationale spécialisée en Jiu-Jitsu Brésilien a comme activité principale l’organisation et la gestion de compétitions officielles nationales et internationales, la gestion des classements des athlètes, le suivi des grades (ceintures), l’affiliation des clubs et l’enregistrement des résultats sportifs.
+C’est une organisation comparable à la International Brazilian Jiu-Jitsu Federation (IBJJF) ou à la International Judo Federation (IJF), qui encadrent et réglementent leur discipline au niveau mondial.
+
+Les données ont été collectées à partir :
+
+des formulaires d’inscription des athlètes aux compétitions,
+des dossiers d’affiliation des clubs,
+des feuilles officielles de résultats des combats,
+des tableaux de classement par saison,
+des règlements sportifs concernant les catégories de poids et de ceinture,
+des historiques de promotions de grade (changement de ceinture).
+
+Inspire-toi du site officiel de la International Brazilian Jiu-Jitsu Federation, notamment des sections relatives aux compétitions, aux classements mondiaux et aux règlements sportifs.
+Ton organisation sportive souhaite appliquer la méthode MERISE afin de concevoir un système d’information permettant de gérer efficacement l’ensemble de ces données. Tu es chargé de la phase d’analyse, c’est-à-dire de recueillir et formaliser les besoins auprès des responsables de l’organisation.
+
+Elle doit correspondre aux informations que fournit quelqu’un qui connaît le fonctionnement de l’entreprise, mais pas comment se construit un système d’information.
 
 
-
-
-
-
-
-
-
-
-
-
-
+Ensuite, à partir de ces règles, fournis un dictionnaire de données brutes avec les colonnes suivantes, regroupées dans un tableau : signification de la donnée, type, taille en nombre de caractères ou de chiffres. Il doit y avoir entre 25 et 35 données. Il sert à fournir des informations supplémentaires sur chaque donnée (taille et type) mais sans a priori sur comment les données vont être modélisées ensuite.
+Fournis donc les règles de gestion et le dictionnaire de données
 
 
 
