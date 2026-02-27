@@ -180,3 +180,7 @@ Si tu veux, je peux maintenant te faire :
 * 🔵 Ou directement le schéma SQL prêt à implémenter
 
 Dis-moi ce que tu préfères 😉
+
+Photo de notre MCD :
+<img width="856" height="567" alt="image" src="https://github.com/user-attachments/assets/2c7a25f6-12ef-411f-aded-e07b1071ed41" />
+
