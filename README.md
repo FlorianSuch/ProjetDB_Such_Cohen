@@ -182,5 +182,7 @@ Si tu veux, je peux maintenant te faire :
 Dis-moi ce que tu préfères 😉
 
 Photo de notre MCD :
-<img width="856" height="567" alt="image" src="https://github.com/user-attachments/assets/2c7a25f6-12ef-411f-aded-e07b1071ed41" />
+
+<img width="1030" height="695" alt="image" src="https://github.com/user-attachments/assets/ec834e8d-7b13-4fbc-9e0f-f039797900bd" />
+
 
