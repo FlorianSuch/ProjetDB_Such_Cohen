@@ -188,11 +188,17 @@ Photo de notre MCD :
 Le MLD déduit de notre looping :
 
 Clubs = (cl_id SMALLINT, cl_nom VARCHAR(50), cl_pays VARCHAR(50), cl_nom_entraineur VARCHAR(50));
-Saison = (saison_id SMALLINT, saison_nom VARCHAR(50));
-Catégorie_ = (cat_id SMALLINT, cat_age SMALLINT, cat_poids DECIMAL(15,2), cat_ceinture VARCHAR(50));
-Athlètes = (a_id SMALLINT, a_nom VARCHAR(50), a_prenom VARCHAR(50), a_date_naissance DATE, a_sexe CHAR(1), a_nationnalite VARCHAR(50), a_poids DECIMAL(15,2), a_grade VARCHAR(50), a_date_obtention_ceinture DATE, a_num_licence_sportive SMALLINT, #cl_id);
-Compétitions = (comp_id SMALLINT, comp_nom VARCHAR(50), comp_date DATE, comp_ville VARCHAR(50), comp_pays VARCHAR(50), #saison_id);
-Combats = (comb_id SMALLINT, comb_score_a1 SMALLINT, comb_score_a2 SMALLINT, comb_type_victoire VARCHAR(50), #a_id*, #a_id_1, #a_id_2, #comp_id);
-Classement_ = (#saison_id, v_id SMALLINT, v_rang_classement SMALLINT, v_nbre_total_vic SMALLINT, v_nbre_participation SMALLINT, v_points_classement SMALLINT, #a_id, #cat_id);
-Inscription = (#a_id, #comp_id, #cat_id);
 
+Saison = (saison_id SMALLINT, saison_nom VARCHAR(50));
+
+Catégorie_ = (cat_id SMALLINT, cat_age SMALLINT, cat_poids DECIMAL(15,2), cat_ceinture VARCHAR(50));
+
+Athlètes = (a_id SMALLINT, a_nom VARCHAR(50), a_prenom VARCHAR(50), a_date_naissance DATE, a_sexe CHAR(1), a_nationnalite VARCHAR(50), a_poids DECIMAL(15,2), a_grade VARCHAR(50), a_date_obtention_ceinture DATE, a_num_licence_sportive SMALLINT, #cl_id);
+
+Compétitions = (comp_id SMALLINT, comp_nom VARCHAR(50), comp_date DATE, comp_ville VARCHAR(50), comp_pays VARCHAR(50), #saison_id);
+
+Combats = (comb_id SMALLINT, comb_score_a1 SMALLINT, comb_score_a2 SMALLINT, comb_type_victoire VARCHAR(50), #a_id*, #a_id_1, #a_id_2, #comp_id);
+
+Classement_ = (#saison_id, v_id SMALLINT, v_rang_classement SMALLINT, v_nbre_total_vic SMALLINT, v_nbre_participation SMALLINT, v_points_classement SMALLINT, #a_id, #cat_id);
+
+Inscription = (#a_id, #comp_id, #cat_id);
