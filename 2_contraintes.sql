@@ -25,11 +25,6 @@ ALTER TABLE Combats
 ADD CONSTRAINT chk_score_positif
 CHECK (comb_score_a1 >= 0 AND comb_score_a2 >= 0);
 
--- Les deux combattants doivent être différents
-ALTER TABLE Combats
-ADD CONSTRAINT chk_combattants_differents
-CHECK (a_id_1 <> a_id_2);
-
 -- Rang de classement positif
 ALTER TABLE Classement
 ADD CONSTRAINT chk_rang_classement
