@@ -1,118 +1,83 @@
-USE bd_projet_s4;
+use bd_projet_s4;
 
--- ======================
--- Clubs
--- ======================
-INSERT INTO Clubs VALUES
-(1,'Paris Judo Club','France','Jean Martin'),
-(2,'Tokyo Elite Dojo','Japon','Hiroshi Tanaka'),
-(3,'Rio Fight Academy','Brésil','Carlos Silva'),
-(4,'New York Judo Center','USA','Michael Brown'),
-(5,'Berlin Combat Club','Allemagne','Hans Müller'),
-(6,'Madrid Combat Team','Espagne','Luis Garcia'),
-(7,'Seoul Judo Academy','Corée','Kim Minsoo'),
-(8,'Sydney Fight Club','Australie','David Wilson');
+-- 1. Tables sans dépendances (Clubs, Saisons, Categorie)
+INSERT INTO Clubs (cl_id, cl_nom, cl_pays, cl_nom_entraineur) VALUES
+(1, 'CDK TEAMS', 'France', 'Marc L.'),
+(2, 'Bushido Dojo', 'Japon', 'Kenji S.'),
+(3, 'Dragon Martial', 'Chine', 'Li Wei'),
+(4, 'Iron Fist', 'USA', 'John D.'),
+(5, 'Tiger Muay', 'Thailande', 'Somchai P.'),
+(6, 'Brazilian BJJ', 'Brésil', 'Carlos R.'),
+(7, 'German Fighters', 'Allemagne', 'Hans M.'),
+(8, 'Italian Team', 'Italie', 'Marco V.'),
+(9, 'Spartan Gym', 'Grèce', 'Nikos K.'),
+(10, 'London Kick', 'UK', 'Paul B.');
 
--- ======================
--- Saisons
--- ======================
-INSERT INTO Saisons VALUES
-(1,'2022'),
-(2,'2023'),
-(3,'2024'),
-(4,'2025');
+INSERT INTO Saisons (s_id, s_nom) VALUES
+(1, 'Saison 2023'), (2, 'Saison 2024'), (3, 'Saison 2025'), (4, 'Saison 2026');
 
--- ======================
--- Categories
--- ======================
-INSERT INTO Categorie VALUES
-(1,18,60,'Bleue'),
-(2,21,73,'Marron'),
-(3,25,81,'Noire'),
-(4,30,90,'Noire'),
-(5,35,100,'Noire');
+INSERT INTO Categorie (cat_id, cat_age, cat_poids, cat_ceinture) VALUES
+(1, 18, 60.00, 'Marron'), (2, 20, 70.00, 'Noire'),
+(3, 22, 80.00, 'Noire'), (4, 19, 65.00, 'Bleue'), (5, 25, 90.00, 'Noire');
 
--- ======================
--- Athletes
--- ======================
-INSERT INTO Athletes VALUES
-(1,'Dupont','Lucas','2000-05-12','M','France',72,'Marron','2021-06-10',1001,1),
-(2,'Bernard','Thomas','1999-02-11','M','France',60,'Bleue','2022-05-10',1002,1),
-(3,'Sato','Kenji','1998-03-02','M','Japon',68,'Noire','2020-08-15',1003,2),
-(4,'Tanaka','Ryu','1997-12-30','M','Japon',81,'Noire','2019-10-10',1004,2),
-(5,'Silva','Pedro','1997-11-20','M','Brésil',80,'Noire','2019-05-20',1005,3),
-(6,'Costa','Andre','1996-04-05','M','Brésil',88,'Noire','2018-07-07',1006,3),
-(7,'Johnson','Mark','1999-07-10','M','USA',90,'Noire','2022-02-10',1007,4),
-(8,'Brown','Alex','2001-01-14','M','USA',73,'Marron','2023-01-01',1008,4),
-(9,'Schmidt','Lukas','2001-01-18','M','Allemagne',73,'Marron','2023-03-15',1009,5),
-(10,'Meyer','Paul','1998-10-10','M','Allemagne',81,'Noire','2020-09-09',1010,5),
-(11,'Garcia','Luis','1999-06-12','M','Espagne',70,'Marron','2022-08-01',1011,6),
-(12,'Lopez','Diego','2000-02-22','M','Espagne',90,'Noire','2023-05-05',1012,6),
-(13,'Kim','Jin','1998-09-09','M','Corée',81,'Noire','2019-11-11',1013,7),
-(14,'Park','Min','1997-03-03','M','Corée',73,'Marron','2020-10-10',1014,7),
-(15,'Wilson','Jack','1999-12-12','M','Australie',90,'Noire','2021-12-12',1015,8);
+-- 2. Tables avec clés étrangères (Athlètes, Compétitions)
+INSERT INTO Athletes (a_id, a_nom, a_prenom, a_date_naissance, a_sexe, a_nationnalite, a_poids, a_grade, a_date_obtention_ceinture, a_num_licence_sportive, cl_id) VALUES
+(1, 'Dupont', 'Lucas', '2005-01-10', 'M', 'France', 60.00, 'Marron', '2025-01-01', 101, 1),
+(2, 'Bernard', 'Hugo', '2004-02-15', 'M', 'France', 70.00, 'Noire', '2024-06-15', 102, 2),
+(3, 'Thomas', 'Theo', '2005-03-20', 'M', 'France', 80.00, 'Noire', '2024-06-15', 103, 3),
+(4, 'Petit', 'Marc', '2004-05-20', 'M', 'France', 80.00, 'Noire', '2024-06-15', 104, 4),
+(5, 'Robert', 'Paul', '2005-06-10', 'M', 'France', 90.00, 'Noire', '2024-06-15', 105, 5),
+(6, 'Richard', 'Tom', '2004-07-25', 'M', 'France', 65.00, 'Bleue', '2025-01-10', 106, 6),
+(7, 'Durand', 'Alex', '2005-08-30', 'M', 'France', 75.00, 'Noire', '2024-05-20', 107, 7),
+(8, 'Dubois', 'Max', '2004-09-12', 'M', 'France', 85.00, 'Noire', '2024-05-20', 108, 8),
+(9, 'Moreau', 'Leo', '2005-10-05', 'M', 'France', 60.00, 'Marron', '2025-02-01', 109, 9),
+(10, 'Laurent', 'Enzo', '2004-11-20', 'M', 'France', 70.00, 'Noire', '2024-05-20', 110, 10),
+(11, 'Simon', 'Noah', '2005-12-15', 'M', 'France', 80.00, 'Noire', '2024-05-20', 111, 1),
+(12, 'Michel', 'Jules', '2004-01-25', 'M', 'France', 90.00, 'Noire', '2024-05-20', 112, 2),
+(13, 'Lefebvre', 'Adam', '2005-02-10', 'M', 'France', 65.00, 'Bleue', '2025-02-10', 113, 3),
+(14, 'Leroy', 'Louis', '2004-03-05', 'M', 'France', 75.00, 'Noire', '2024-05-20', 114, 4),
+(15, 'Roux', 'Yan', '2005-04-12', 'M', 'France', 85.00, 'Noire', '2024-05-20', 115, 5),
+(16, 'Martin', 'Léa', '2006-03-12', 'F', 'France', 60.00, 'Bleue', '2025-02-10', 201, 1),
+(17, 'Garcia', 'Ana', '2003-08-30', 'F', 'Espagne', 65.00, 'Noire', '2023-11-20', 202, 6),
+(18, 'David', 'Eva', '2006-05-12', 'F', 'France', 60.00, 'Marron', '2025-02-10', 203, 7),
+(19, 'Bertrand', 'Zoé', '2003-09-20', 'F', 'France', 70.00, 'Noire', '2023-11-20', 204, 8),
+(20, 'Fournier', 'Jade', '2006-06-15', 'F', 'France', 65.00, 'Bleue', '2025-02-10', 205, 9),
+(21, 'Girard', 'Chloé', '2003-10-10', 'F', 'France', 60.00, 'Marron', '2023-11-20', 206, 10),
+(22, 'Bonnet', 'Emma', '2006-07-20', 'F', 'France', 70.00, 'Noire', '2025-02-10', 207, 1),
+(23, 'Vincent', 'Sarah', '2003-11-05', 'F', 'France', 65.00, 'Bleue', '2023-11-20', 208, 2),
+(24, 'Lefebvre', 'Inès', '2006-08-15', 'F', 'France', 60.00, 'Marron', '2025-02-10', 209, 3),
+(25, 'Mercier', 'Rose', '2003-12-20', 'F', 'France', 70.00, 'Noire', '2023-11-20', 210, 4),
+(26, 'Blanc', 'Alice', '2006-09-10', 'F', 'France', 65.00, 'Bleue', '2025-02-10', 211, 5),
+(27, 'Guérin', 'Nina', '2003-01-25', 'F', 'France', 60.00, 'Marron', '2023-11-20', 212, 6),
+(28, 'Boyer', 'Lina', '2006-10-05', 'F', 'France', 70.00, 'Noire', '2025-02-10', 213, 7),
+(29, 'Fontaine', 'Luna', '2003-02-10', 'F', 'France', 65.00, 'Bleue', '2023-11-20', 214, 8),
+(30, 'Deschamps', 'Clara', '2006-11-20', 'F', 'France', 60.00, 'Marron', '2025-02-10', 215, 9);
 
--- ======================
--- Competitions
--- ======================
-INSERT INTO Competitions VALUES
-(1,'Championnat Europe','2023-03-12','Paris','France',2),
-(2,'Open International','2023-05-20','Tokyo','Japon',2),
-(3,'World Cup','2024-02-15','Rio','Brésil',3),
-(4,'Grand Prix','2024-06-10','Berlin','Allemagne',3),
-(5,'Master Series','2025-03-18','Madrid','Espagne',4),
-(6,'Asian Championship','2025-07-11','Seoul','Corée',4);
+INSERT INTO Competitions (comp_id, comp_nom, comp_date, comp_ville, comp_pays, s_id) VALUES
+(1, 'Open Paris', '2024-10-10', 'Paris', 'France', 2),
+(2, 'Grand Slam Tokyo', '2025-01-15', 'Tokyo', 'Japon', 3),
+(3, 'Tournoi Mondial', '2025-05-20', 'Londres', 'UK', 3),
+(4, 'Coupe Europe', '2025-09-10', 'Berlin', 'Allemagne', 3),
+(5, 'Open Rome', '2026-02-10', 'Rome', 'Italie', 4),
+(6, 'Fight Night', '2026-04-12', 'Athènes', 'Grèce', 4),
+(7, 'Masters BJJ', '2026-06-05', 'Rio', 'Brésil', 4),
+(8, 'Global Cup', '2026-08-20', 'Pékin', 'Chine', 4);
 
--- ======================
--- Combats
--- ======================
-INSERT INTO Combats VALUES
-(1,10,7,'Ippon',1,1,3,1),
-(2,5,3,'Waza-ari',3,3,9,1),
-(3,8,6,'Ippon',4,4,7,2),
-(4,4,2,'Décision',3,3,2,2),
-(5,7,5,'Ippon',5,5,8,3),
-(6,6,4,'Waza-ari',7,7,13,3),
-(7,3,1,'Décision',9,9,11,4),
-(8,9,7,'Ippon',6,6,15,4),
-(9,10,6,'Ippon',10,10,4,5),
-(10,7,3,'Waza-ari',12,12,6,5),
-(11,5,2,'Décision',13,13,14,6),
-(12,8,4,'Ippon',15,15,7,6);
+-- 3. Tables de relations (Combats, Classement, Inscription)
+INSERT INTO Combats (comb_id, comb_score_a1, comb_score_a2, comb_type_victoire, a_id, a_id_1, a_id_2, comp_id) VALUES
+(1, 10, 2, 'Points', 1, 1, 2, 1), (2, 5, 0, 'KO', 3, 3, 4, 1),
+(3, 8, 4, 'Points', 5, 5, 6, 2), (4, 12, 1, 'KO', 7, 7, 8, 2),
+(5, 3, 2, 'Points', 9, 9, 10, 3), (6, 6, 6, 'Egalité', 11, 11, 12, 3),
+(7, 10, 5, 'Points', 13, 13, 14, 4), (8, 9, 0, 'KO', 15, 15, 1, 4),
+(9, 4, 3, 'Points', 16, 16, 17, 5), (10, 7, 2, 'Points', 18, 18, 19, 6),
+(11, 10, 8, 'Points', 20, 20, 21, 7), (12, 5, 1, 'KO', 22, 22, 23, 8);
 
--- ======================
--- Classement
--- ======================
-INSERT INTO Classement VALUES
-(1,1,10,12,2,1,2),
-(2,2,9,12,2,3,2),
-(3,3,8,11,2,4,3),
-(4,4,7,10,2,5,3),
-(5,5,6,9,3,7,4),
-(6,6,5,8,3,9,2),
-(7,7,4,7,3,10,3),
-(8,8,3,6,4,12,4),
-(9,9,3,5,4,13,3),
-(10,10,2,4,4,15,4);
+INSERT INTO Classement (cla_id, cla_rang_classement, cla_nbre_total_vic, cla_nbre_participation, s_id, a_id, cat_id) VALUES
+(1, 1, 10, 12, 3, 1, 1), (2, 2, 8, 11, 3, 2, 2), (3, 3, 7, 10, 3, 3, 3),
+(4, 4, 6, 9, 3, 4, 4), (5, 5, 5, 8, 3, 5, 5), (6, 6, 4, 7, 2, 6, 1),
+(7, 7, 3, 6, 2, 7, 2), (8, 8, 2, 5, 2, 8, 3), (9, 9, 1, 4, 2, 9, 4), (10, 10, 0, 3, 2, 10, 5);
 
--- ======================
--- Inscription
--- ======================
-INSERT INTO Inscription VALUES
-(1,1,2),
-(3,1,2),
-(9,1,2),
-(4,2,3),
-(3,2,2),
-(7,2,4),
-(5,3,3),
-(6,3,4),
-(13,3,3),
-(9,4,2),
-(11,4,2),
-(15,4,4),
-(10,5,3),
-(12,5,4),
-(13,6,3),
-(14,6,2),
-(15,6,4);
+INSERT INTO Inscription (a_id, comp_id, cat_id) VALUES
+(1, 1, 1), (2, 1, 2), (3, 2, 3), (4, 2, 4), (5, 3, 5),
+(6, 3, 1), (7, 4, 2), (8, 4, 3), (9, 5, 4), (10, 5, 5),
+(11, 6, 1), (12, 6, 2), (13, 7, 3), (14, 7, 4), (15, 8, 5);
