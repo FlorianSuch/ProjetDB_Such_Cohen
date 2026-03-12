@@ -202,3 +202,30 @@ Combats = (comb_id SMALLINT, comb_score_a1 SMALLINT, comb_score_a2 SMALLINT, com
 Classement_ = (#saison_id, v_id SMALLINT, v_rang_classement SMALLINT, v_nbre_total_vic SMALLINT, v_nbre_participation SMALLINT, v_points_classement SMALLINT, #a_id, #cat_id);
 
 Inscription = (#a_id, #comp_id, #cat_id);
+
+Prompt donné à l’IAG pour générer une base de données.
+
+
+Donne les requêtes d’insertion permettant de remplir la base de données dont le modèle relationnel est le suivant : 
+
+Clubs = (cl_id SMALLINT, cl_nom VARCHAR(50), cl_pays VARCHAR(50), cl_nom_entraineur VARCHAR(50));
+
+Saison = (saison_id SMALLINT, saison_nom VARCHAR(50));
+
+Catégorie_ = (cat_id SMALLINT, cat_age SMALLINT, cat_poids DECIMAL(15,2), cat_ceinture VARCHAR(50));
+
+Athlètes = (a_id SMALLINT, a_nom VARCHAR(50), a_prenom VARCHAR(50), a_date_naissance DATE, a_sexe CHAR(1), a_nationnalite VARCHAR(50), a_poids DECIMAL(15,2), a_grade VARCHAR(50), a_date_obtention_ceinture DATE, a_num_licence_sportive SMALLINT, #cl_id);
+
+Compétitions = (comp_id SMALLINT, comp_nom VARCHAR(50), comp_date DATE, comp_ville VARCHAR(50), comp_pays VARCHAR(50), #saison_id);
+
+Combats = (comb_id SMALLINT, comb_score_a1 SMALLINT, comb_score_a2 SMALLINT, comb_type_victoire VARCHAR(50), #a_id*, #a_id_1, #a_id_2, #comp_id);
+
+Classement_ = (#saison_id, v_id SMALLINT, v_rang_classement SMALLINT, v_nbre_total_vic SMALLINT, v_nbre_participation SMALLINT, v_points_classement SMALLINT, #a_id, #cat_id);
+
+Inscription = (#a_id, #comp_id, #cat_id);
+
+Les clés primaires correspondent aux id, sauf si autre chose est précisé (quand c'est un attribut composé) les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence.
+[INDIQUER LE NOMBRE DE LIGNES SOUHAITE PAR TABLE Pour la table Athlètes je veux 15 lignes pour les garcons et 15 lignes pour les filles .  Pour les clubs je veux 10 clubs dont  1 fois  CDK TEAMS , Pour les saions j’en veux 4. Pour les categories j’en veux 5.  Pour les compétitions   8 .  Pour les combats 12 . Pour les classement 10 . Pour finir inscription 15.
+Les clés étrangères doivent faire référence aux clés primaires existantes : donne les lignes en commençant par remplir les tables dans lesquelles il n'y a pas de clés étrangères, puis les tables dans lesquelles les clés étrangères font références à des clés primaires des tables déjà remplies. 
+
+Fournis l'ensemble sous la forme d’un script SQL prêt à être exécuté.
