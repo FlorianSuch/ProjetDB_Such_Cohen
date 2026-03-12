@@ -203,7 +203,8 @@ Classement_ = (#saison_id, v_id SMALLINT, v_rang_classement SMALLINT, v_nbre_tot
 
 Inscription = (#a_id, #comp_id, #cat_id);
 
-Prompt donné à l’IAG pour générer une base de données.
+
+📌  Prompt donné à l’IAG pour générer une base de données.
 
 
 Donne les requêtes d’insertion permettant de remplir la base de données dont le modèle relationnel est le suivant : 
