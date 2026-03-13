@@ -261,23 +261,41 @@ Classements = (#s_id, cla_id SMALLINT, cla_rang_classement SMALLINT, cla_nbre_to
 Inscriptions = (#a_id, #comp_id, #cat_id);
 
 Les clés primaires correspondent aux id, sauf si autre chose est précisé (quand c'est un attribut composé) les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence. 
+
 LE NOMBRE DE LIGNES SOUHAITE PAR TABLE : 
+
 Pour la table Athlètes : 
+
   Je veux 15 lignes pour les garcons et 15 lignes pour les filles. 
+
 Pour les clubs : 
+
   Je veux 10 clubs dont 1 fois 'CDK TEAMS'. 
+
 Pour les saions : 
+
   J’en veux 4. 
+
 Pour les categories : 
+
   J’en veux 5. 
+
 Pour les compétitions : 
+
   J'en veux 8.
+
 Pour les combats : 
+
   J'en veux 12. 
+
 Pour les classement : 
+
   J'en veux 10. 
+
 Pour finir inscription : 
+
   J'en veux 15. 
+
 Les clés étrangères doivent faire référence aux clés primaires existantes : donne les lignes en commençant par remplir les tables dans lesquelles il n'y a pas de clés étrangères, puis les tables dans lesquelles les clés étrangères font références à des clés primaires des tables déjà remplies.
 
 Fournis l'ensemble sous la forme d’un script SQL prêt à être exécuté.
