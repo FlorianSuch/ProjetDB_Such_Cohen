@@ -225,7 +225,7 @@ Classements = (#s_id, cla_id SMALLINT, cla_rang_classement SMALLINT, cla_nbre_to
 
 Inscriptions = (#a_id, #comp_id, #cat_id);
 
-Les clés primaires correspondent aux id, sauf si autre chose est précisé (quand c'est un attribut composé) les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence.
+Les clés primaires correspondent aux id, sauf si autre chose est précisé (quand c'est un attribut composé) les clés étrangères sont identifiées par les #, et ont le même nom que les clés primaires auxquelles elles font référence. \n
 LE NOMBRE DE LIGNES SOUHAITE PAR TABLE : 
 Pour la table Athlètes :
   Je veux 15 lignes pour les garcons et 15 lignes pour les filles.
