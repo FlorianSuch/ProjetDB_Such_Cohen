@@ -216,7 +216,7 @@ Voici les règles de gestion exprimées comme le ferait un **responsable métier
 
 Photo de notre MCD :
 
-<img width="1030" height="695" alt="image" src="https://github.com/user-attachments/assets/ec834e8d-7b13-4fbc-9e0f-f039797900bd" />
+<img width="788" height="508" alt="image" src="https://github.com/user-attachments/assets/9d68e920-1916-4fc9-9eba-449e97ac8794" />
 
 ---
 
